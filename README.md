@@ -6,7 +6,9 @@
 
 ## Features  
 * 根据画面设计，自动生成angular module模块  
-* 根据画面设计，自动生成angular component组件    
+* 根据画面设计，自动生成angular component组件  
+* 根据画面设计，自动生成beego controller  
+* 根据画面设计，自动生成beego model    
 
 ## Environment Support  
 * beego 1.9.0  
