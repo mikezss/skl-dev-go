@@ -1,0 +1,9 @@
+<app-skl-form 
+	formtitle="{{'${componentname$}title'|translate}}" 
+	[formcolnames]="queryitems" 
+	(action)="getquery($event)" 	
+	[ncolcount]=${colcount$}   
+	[formdata]="querydata" 
+	[buttons]="['reset','search']"
+	(formdatachange)="formdatachange($event)">
+</app-skl-form>

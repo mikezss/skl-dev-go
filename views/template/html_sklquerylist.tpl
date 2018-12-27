@@ -1,0 +1,14 @@
+<app-skl-list   
+	listtitle="{{'${componentname$}title'|translate}}" 
+	[listdata]="listdata" 
+	[listcolnames]="listcolnames"  	
+	(linkAction)="edit($event)"  
+	[(pageIndex)]="pageindex" 
+	[(pageSize)]="pagesize" 
+	[total]="total" 
+	[loading]="loading" 
+	(refreshtable)="refreshtable($event)"
+	(listdatachange)="listdatachange($event)"
+	listtype="'query'"
+	>
+</app-skl-list>

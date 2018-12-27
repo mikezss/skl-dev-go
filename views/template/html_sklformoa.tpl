@@ -1,0 +1,14 @@
+<app-skl-form 
+	formtitle="{{'${componentname$}title'|translate}}"   
+	[formcolnames]="formcolnames" 				  
+	(action)="dosubmit($event)" 
+	[formdata]="formdata" 
+	ngutter=${gutter$} 
+	ncolcount=${colcount$}
+	(uploadcheck)="uploadcheck($event)"
+	tablesize="small"
+	[buttons]="actionids"
+	[mode]="m"
+	(formdatachange)="formdatachange($event)"
+>
+</app-skl-form>
