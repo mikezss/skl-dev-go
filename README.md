@@ -1,7 +1,7 @@
 # skl-dev-go  
 
 ## Project description  
-* skl开发平台辅助开发模块  
+* skl开发平台辅助开发模块后端    
 * 通过画面设计，自动生成前后台框架代码。开发人员可以专注于业务逻辑的处理。
 
 ## Features  
