@@ -43,25 +43,29 @@ export class ${firstuppercomponentname$}Component implements OnInit {
 
   getquery(event) {
     console.log(event);
-    this.loading = true;
-    this.querydata.Pageindex = this.pageindex;
-    this.querydata.Pagesize = this.pagesize;
-	this.querydata.Flowstatus = this.ms.checkboxgroup2string(this.queryitems[3].checkboxgroup);
-    this.cs.get${componentname$}count(this.querydata).subscribe(response => {
-      this.total = response.Total;
-    });
-
-    this.cs.get${componentname$}bypageindex(this.querydata).subscribe(data => {
-      let respons: any[] = [];
-      respons = data; 
-	  for (let data1 of respons) {
-        data1.Routerlink = "/${componentname$}";
-        data1.QueryParams = {'Mode': 's', 'Flowinstid': data1.Flowinstid};
-      }     
-      this.listdata = respons;
-      this.loading = false;
-    });
-
+    if (event == 'search') {
+      this.loading = true;
+      this.querydata.Pageindex = this.pageindex;
+      this.querydata.Pagesize = this.pagesize;
+  	  this.querydata.Flowstatus = this.ms.checkboxgroup2string(this.queryitems[3].checkboxgroup);
+      this.cs.get${componentname$}count(this.querydata).subscribe(response => {
+        this.total = response.Total;
+      });
+  
+      this.cs.get${componentname$}bypageindex(this.querydata).subscribe(data => {
+        let respons: any[] = [];
+        respons = data; 
+  	  for (let data1 of respons) {
+          data1.Routerlink = "/${componentname$}";
+          data1.QueryParams = {'Mode': 's', 'Flowinstid': data1.Flowinstid};
+          data1.Editable = true;
+        }     
+        this.listdata = respons;
+        this.loading = false;
+      });
+    } else {
+      this.reset();
+    }
   }
 
   edit(event) {
@@ -85,6 +89,7 @@ export class ${firstuppercomponentname$}Component implements OnInit {
 	  for (let data1 of respons) {
         data1.Routerlink = "/${componentname$}";
         data1.QueryParams = {'Mode': 's', 'Flowinstid': data1.Flowinstid};
+        data1.Editable = true;
       }      
       this.listdata = respons;
       this.loading = false;

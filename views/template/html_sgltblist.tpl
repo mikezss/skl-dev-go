@@ -9,5 +9,5 @@
 	[total]="total" 
 	[loading]="loading" 
 	(refreshtable)="refreshtable($event)"
-	[buttons]="['save']">
+	[buttons]="[{'name':'save','icon':'save'}]">
 </app-skl-list>

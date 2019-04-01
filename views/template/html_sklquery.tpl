@@ -4,6 +4,6 @@
 	(action)="getquery($event)" 	
 	[ncolcount]=${colcount$}   
 	[formdata]="querydata" 
-	[buttons]="['reset','search']"
+	[buttons]="[{'name':'reset','icon':'reload'},{'name':'search','icon':'search'}]"
 	(formdatachange)="formdatachange($event)">
 </app-skl-form>

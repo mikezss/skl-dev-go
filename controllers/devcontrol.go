@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
+
 	"github.com/mikezss/skl-dev-go/models"
 
 	_ "bufio"
@@ -879,6 +880,7 @@ func (this *DEVController) updateNGcomponenthtml(modulename string, componentnam
 			fmt.Println(err)
 			return err
 		}
+		//{'name':'reset','icon':'reload'},{'name':'search','icon':'search'}
 		buttons := "["
 		barry := strings.Split(cad.Component.Buttons, ",")
 
